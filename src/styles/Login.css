@@ -1,0 +1,199 @@
+
+.mainAuth{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+      overflow-x: hidden;
+       background: url('https://assets.nflxext.com/ffe/siteui/vlv3/9d3533b2-0e2b-40b2-95e0-ecd7979cc88b/a3873901-5b7c-46eb-b9fa-12fea5197bd3/IN-en-20240311-popsignuptwoweeks-perspective_alpha_website_large.jpg') no-repeat center center fixed;
+}
+
+.netflix-login {
+   
+    background-size: cover;
+    height:400px;
+    color: #fff;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.netflix-login::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.netflix-header {
+    padding: 20px 50px;
+    position: relative;
+    z-index: 10;
+   position: fixed;
+   top: 0;
+   left: 0;
+}
+
+.netflix-logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #e50914;
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    /* margin-top: -150px;
+    margin-left: 0px; */
+}
+
+.netflix-login-container {
+    position: relative;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 450px;
+    min-height: 550px;
+    margin: 0 auto;
+    padding: 60px 68px 40px;
+}
+
+.netflix-login-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.netflix-login-form h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 28px;
+}
+
+.netflix-input-container {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.netflix-input-container input {
+    width: 100%;
+    height: 50px;
+    background: #333;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    padding: 16px 20px 0;
+    box-sizing: border-box;
+}
+
+.netflix-input-container input:focus {
+    outline: none;
+    background: #454545;
+}
+
+.netflix-input-container label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: #8c8c8c;
+    font-size: 16px;
+    transition: all 0.1s ease;
+    pointer-events: none;
+}
+
+.netflix-input-container input:focus + label,
+.netflix-input-container input:not(:placeholder-shown) + label {
+    top: 7px;
+    transform: translateY(0);
+    font-size: 11px;
+}
+
+button {
+    background: #e50914;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 24px 0 12px;
+    padding: 16px;
+    border: 0;
+    color: white;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.netflix-error {
+    background: #e87c03;
+    border-radius: 4px;
+    font-size: 14px;
+    margin: 0 0 16px;
+    color: white;
+    padding: 10px 20px;
+}
+
+.netflix-help-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #b3b3b3;
+    font-size: 13px;
+    margin-bottom: 50px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 5px;
+}
+
+.help-link {
+    color: #b3b3b3;
+    text-decoration: none;
+}
+
+.help-link:hover {
+    text-decoration: underline;
+}
+
+.netflix-signup-text {
+    color: #737373;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.netflix-signup-text a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.netflix-signup-text a:hover {
+    text-decoration: underline;
+}
+
+.netflix-captcha {
+    color: #8c8c8c;
+    font-size: 13px;
+    margin-top: 15px;
+}
+
+.netflix-captcha a {
+    color: #0071eb;
+    text-decoration: none;
+}
+
+.netflix-captcha a:hover {
+    text-decoration: underline;
+}

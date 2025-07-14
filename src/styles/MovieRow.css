@@ -1,0 +1,82 @@
+.movie-row {
+  margin-bottom: 30px;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.row-title {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.row-posters {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;        
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  padding: 20px 0;
+}
+
+.row-posters::-webkit-scrollbar {
+  display: none;
+}
+
+.movie-item {
+  position: relative;
+  flex: 0 0 auto;
+  margin-right: 15px;
+  cursor: pointer;
+  scroll-snap-align: start;
+}
+
+.movie-number {
+  position: absolute;
+  top: -15px;
+  left: -20px;
+  font-size: 8rem;
+  font-weight: 900;
+  color: #000;
+  text-shadow: 
+    -2px -2px 0 #fff,
+    2px -2px 0 #fff,
+    -2px 2px 0 #fff,
+    2px 2px 0 #fff,
+    0 0 10px rgba(255, 255, 255, 0.8);
+  z-index: 3;
+  line-height: 0.8;
+  pointer-events: none;
+  font-family: 'Arial Black', Arial, sans-serif;
+}
+
+.row-poster {
+  width: 200px;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.movie-item:hover .row-poster {
+  transform: scale(1.08);
+}
+
+.movie-item:hover .movie-number {
+  transform: scale(1.1);
+}
+
+/* Alternative styling for smaller numbers */
+@media (max-width: 768px) {
+  .movie-number {
+    font-size: 6rem;
+    top: -10px;
+    left: -15px;
+  }
+  
+  .row-poster {
+    width: 150px;
+  }
+}

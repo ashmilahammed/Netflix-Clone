@@ -1,0 +1,75 @@
+.netflix-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px 50px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.netflix-header.scrolled {
+    position: fixed;
+    background-color: #141414;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.netflix-logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #e50914;
+    text-decoration: none;
+    margin-right: 30px;
+    z-index: -1;
+}
+
+.nav-links a {
+    margin-right: 20px;
+    color: white;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #b3b3b3;
+}
+
+.right-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon {
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.icon:hover {
+    color: #b3b3b3;
+}
+
+.profile-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.signOut:hover{
+    background-color: #5f0409;
+}

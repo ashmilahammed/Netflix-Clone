@@ -1,0 +1,34 @@
+/* Add this to your HomePage.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.home-page {
+  position: relative;
+  width: 100vw; /* Use viewport width instead of 100% */
+  color: white;
+  background-color: #141414;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.movie-rows-container {
+  position: relative;
+  z-index: 2;
+  padding: 20px 50px;
+  margin-top: -150px;
+  width: 100%;
+  max-width: 100vw; /* Ensure it doesn't exceed viewport width */
+  box-sizing: border-box;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.loading,
+.error {
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 1.2rem;
+}
