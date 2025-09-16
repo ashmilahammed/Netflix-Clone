@@ -40,7 +40,7 @@ function Navbar() {
         
              <button className='signOut' onClick={handleLogout} style={{width:'80px', height:'30px', backgroundColor:'red',
                  color:'black', display:'flex', justifyContent:'center', alignItems:'center', 
-                 position:'absolute', left:'1400px'}}>SignOut</button>
+                 position:'absolute', left:'1250px'}}>SignOut</button>
 
        
       </div>
