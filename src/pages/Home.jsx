@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import axios from 'axios';
 import HeroBanner from '../assets/HeroBanner';
 import MovieRow from '../assets/MovieRow';
@@ -6,6 +6,7 @@ import MovieModal from '../assets/MovieModel';
 import '../styles/HomePage.css';
 
 const TMBD_API_KEY = '0d00d8441e85b1211c86a60f3bbc2f2c';
+
 function Home() {
   const [trendingMovies, setTrendingMovies] = useState([]);
   const [popularMovies, setPopularMovies] = useState([]);
@@ -13,7 +14,6 @@ function Home() {
   const [bannerMovie, setBannerMovie] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  
 
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -45,7 +45,8 @@ function Home() {
         );
         setTopRatedMovies(topRatedRes.data.results);
 
-        const randomMovie = trendingResults[Math.floor(Math.random() * trendingResults.length)];
+        const randomMovie =
+          trendingResults[Math.floor(Math.random() * trendingResults.length)];
         setBannerMovie(randomMovie);
 
         setLoading(false);
@@ -58,44 +59,45 @@ function Home() {
     fetchData();
   }, []);
 
-  const handleMovieClick = (movie) => {
+  ////
+  const handleMovieClick = useCallback((movie) => {
     setSelectedMovie(movie);
     setIsModalOpen(true);
-  };
+  }, []);
 
-  const handleCloseModal = () => {
+  const handleCloseModal = useCallback(() => {
     setIsModalOpen(false);
     setSelectedMovie(null);
-  };
+  }, []);
 
   return (
     <div className="home-page">
       {loading && <div className="loading">Loading...</div>}
       {error && <div className="error">{error}</div>}
-      
+
       <HeroBanner bannerMovie={bannerMovie} />
-      
+
       <div className="movie-rows-container">
         {trendingMovies.length > 0 && (
-          <MovieRow 
-            title="Trending Now" 
-            movies={trendingMovies} 
+          <MovieRow
+            title="Trending Now"
+            movies={trendingMovies}
             onMovieClick={handleMovieClick}
             showNumbers={true}
           />
         )}
         {popularMovies.length > 0 && (
-          <MovieRow 
-            title="Popular on Netflix" 
-            movies={popularMovies} 
+          <MovieRow
+            title="Popular on Netflix"
+            movies={popularMovies}
             onMovieClick={handleMovieClick}
             showNumbers={false}
           />
         )}
         {topRatedMovies.length > 0 && (
-          <MovieRow 
-            title="Top Rated" 
-            movies={topRatedMovies} 
+          <MovieRow
+            title="Top Rated"
+            movies={topRatedMovies}
             onMovieClick={handleMovieClick}
             showNumbers={false}
           />

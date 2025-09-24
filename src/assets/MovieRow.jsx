@@ -7,7 +7,11 @@ function MovieRow({ title, movies, onMovieClick, showNumbers = false }) {
       <h2 className="row-title">{title}</h2>
       <div className="row-posters">
         {movies.map((movie, index) => (
-          <div key={movie.id} className="movie-item" onClick={() => onMovieClick(movie)}>
+          <div 
+            key={movie.id} 
+            className="movie-item" 
+            onClick={() => onMovieClick(movie)}
+          >
             {showNumbers && (
               <div className="movie-number">
                 {index + 1}
@@ -25,4 +29,5 @@ function MovieRow({ title, movies, onMovieClick, showNumbers = false }) {
   );
 }
 
-export default MovieRow;
+
+export default React.memo(MovieRow);

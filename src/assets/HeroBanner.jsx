@@ -1,13 +1,10 @@
-
+import React, { memo } from 'react';
 import '../styles/HeroBanner.css';
 
 import Navbar from './Navbar';
-import MovieRow from './MovieRow';
 
 
 
-
-const TMBD_API_KEY = '0d00d8441e85b1211c86a60f3bbc2f2c'
 function HeroBanner({ bannerMovie }) {
   return (
     <div
@@ -21,7 +18,9 @@ function HeroBanner({ bannerMovie }) {
       <Navbar />
       {bannerMovie && (
         <div className="hero-content">
-          <h1 className="hero-title">{bannerMovie.title || bannerMovie.name}</h1>
+          <h1 className="hero-title">
+            {bannerMovie.title || bannerMovie.name}
+          </h1>
           <p className="hero-description">{bannerMovie.overview}</p>
         </div>
       )}
@@ -30,5 +29,4 @@ function HeroBanner({ bannerMovie }) {
   );
 }
 
-export default HeroBanner;
-
+export default memo(HeroBanner);
